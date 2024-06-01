@@ -6,14 +6,15 @@ const productRoutes = require('./routes/products');
 const app = express();
 const PORT = process.env.PORT || 4004;
 
+// Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.static('public'));
 
 app.use(express.static(path.join(__dirname,'public')));
 
-
-// app.use('/auth', authRoutes);
+// Routes
+app.use('/auth', authRoutes);
 // app.use('/products', productRoutes);
 
 // Start Server
